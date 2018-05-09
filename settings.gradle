@@ -1,0 +1,29 @@
+/* ********************sysName******************** */
+def sysName=rootProject.name='vjar'
+
+/* ========================================================== */
+/* ====================== subprojects ======================= */
+/* ========================================================== */
+
+/* ********************app******************** */
+include "$sysName-app"
+project(":$sysName-app").projectDir=new File(settingsDir,'app/app')
+
+/* ********************base******************** */
+include "$sysName-base"
+project(":$sysName-base").projectDir=new File(settingsDir,'app/base')
+
+/* ********************data******************** */
+include "$sysName-data"
+project(":$sysName-data").projectDir=new File(settingsDir,'app/data')
+
+/* ********************serv******************** */
+include "$sysName-serv"
+project(":$sysName-serv").projectDir=new File(settingsDir,'app/serv')
+
+
+/* ********************test******************** */
+include "$sysName-test"
+project(":$sysName-test").projectDir=new File(settingsDir,'app/test')
+
+

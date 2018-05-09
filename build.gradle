@@ -1,0 +1,58 @@
+description = 'The Aboo-Vapp Project'
+defaultTasks 'clean', 'build'
+
+buildscript {
+  repositories {
+    mavenLocal()
+    maven { url "http://repo.spring.io" }
+    mavenCentral()
+  }
+  dependencies {
+    classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.0.RELEASE"
+  }
+}
+
+allprojects{
+  group='com.aboo'
+  version = '1.0.0'
+}
+
+subprojects {
+  repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "http://repo.spring.io" }
+    maven { url "http://repo.spring.io/libs-snapshot" }
+    maven { url "https://repo.spring.io/libs-milestone" }
+	}
+  
+  ext{
+    scriptDir="${rootProject.projectDir}/script"
+  }
+
+  apply from: "${scriptDir}/java.gradle"
+  //apply from: "${scriptDir}/kotlin.gradle"
+  apply from: "${scriptDir}/springBootDependency.gradle"
+  apply from: "${scriptDir}/osgi.gradle"
+  //apply from: "${scriptDir}/checkstyle.gradle"
+  //apply from: "${scriptDir}/findbugs.gradle"
+  //apply from: "${scriptDir}/pmd.gradle"
+  apply from: "${scriptDir}/eclipse.gradle"
+
+  // dependency management
+  dependencyManagement {
+      imports {
+        mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+        //mavenBom "org.springframework.cloud:spring-cloud-dependencies:Finchley.RC1"
+      }
+  }
+  
+  dependencies {
+    compile "org.projectlombok:lombok:1.16.20"
+  }
+}
+
+/* gradle wrapper */
+task wrapper(type: Wrapper) {
+  gradleVersion = '4.7'
+}

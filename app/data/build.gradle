@@ -1,0 +1,6 @@
+dependencies {
+    compile project(":$rootProject.name-base")
+    //compile "com.zaxxer:HikariCP:2.5.1"
+    compile "mysql:mysql-connector-java:5.1.40"
+    compile "com.baomidou:mybatis-plus-boot-starter:2.2.0"
+}
