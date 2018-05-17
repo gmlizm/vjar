@@ -1,6 +1,6 @@
 ##################################################################
 server: 
-    display-name: vnet-app
+    display-name: vjar-app
     port: 8080
     context-path: /
     servlet-path: /
@@ -30,7 +30,7 @@ spring:
         type: com.zaxxer.hikari.HikariDataSource
         continue-on-error: false
         driver-class-name: com.mysql.jdbc.Driver
-        url: "jdbc:mysql://127.0.0.1:3306/db_aboo?serverTimezone=UTC&useSSL=true"
+        url: "jdbc:mysql://127.0.0.1:3306/db_aboo?serverTimezone=UTC&characterEncoding=utf8&autoReconnect=true&useSSL=false"
         username: root
         password: root
         initialize: false
@@ -54,7 +54,7 @@ spring:
             poolName: hikari_connection_pool
             connectionInitSql: 
             transactionIsolation: TRANSACTION_READ_COMMITTED
-            connectionTimeout: 3000
+            connectionTimeout: 30000
             validationTimeout: 5000
             idleTimeout: 600000
             leakDetectionThreshold: 3000

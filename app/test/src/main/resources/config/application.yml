@@ -1,6 +1,6 @@
 ##################################################################
 server: 
-    display-name: vnet-app
+    display-name: vjar-app
     port: 8080
     context-path: /
     servlet-path: /
