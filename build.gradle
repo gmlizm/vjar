@@ -1,6 +1,4 @@
-description = 'The Aboo-Vapp Project'
 defaultTasks 'clean', 'build'
-
 buildscript {
   repositories {
     mavenLocal()
@@ -13,6 +11,7 @@ buildscript {
 }
 
 allprojects{
+  description = "module ${project.name}"
   group='com.aboo'
   version = '1.0.0'
 }
