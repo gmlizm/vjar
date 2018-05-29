@@ -1,5 +1,6 @@
 package com.aboo.vjar.util;
 
+
 public class MainTest {
 
 	/*public static void main(String[] args) {
@@ -21,4 +22,8 @@ public class MainTest {
 			e.printStackTrace();
 		}
 	}*/
+	
+	public static void main(String[] args) {
+		
+	}
 }

@@ -12,4 +12,7 @@ dependencies {
     compile "ch.qos.logback:logback-access:1.1.7"
 
     compile "org.javassist:javassist:3.21.0-GA"
+    
+    //import
+    //compile "org.picocontainer:picocontainer:2.15"
 }

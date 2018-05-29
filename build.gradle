@@ -48,6 +48,11 @@ subprojects {
   
   dependencies {
     compile "org.projectlombok:lombok:1.16.20"
+    compile "org.mapstruct:mapstruct-jdk8:1.2.0.Final"
+    compile "org.mapstruct:mapstruct-processor:1.2.0.Final"
+    //<scope>provided</scope>
+    compile "javax.inject:javax.inject:1"
+
   }
 }
 
